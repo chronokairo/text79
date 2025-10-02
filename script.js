@@ -7,7 +7,33 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initHeaderScroll();
     initWhatsAppButton();
+    initResourceTabs();
 });
+
+// Resource Tabs Functionality
+function initResourceTabs() {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const resourceCategories = document.querySelectorAll('.resource-category');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const targetCategory = this.getAttribute('data-category');
+            
+            // Remove active class from all tabs and categories
+            tabBtns.forEach(tab => tab.classList.remove('active'));
+            resourceCategories.forEach(category => category.classList.remove('active'));
+            
+            // Add active class to clicked tab
+            this.classList.add('active');
+            
+            // Show target category
+            const targetElement = document.getElementById(targetCategory);
+            if (targetElement) {
+                targetElement.classList.add('active');
+            }
+        });
+    });
+}
 
 // Mobile Menu Functionality
 function initMobileMenu() {
