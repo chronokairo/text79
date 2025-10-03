@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initResourceTabs();
     initParallaxEffect();
     initCounterAnimation();
+    initChatbot();
 });
 
 // Resource Tabs Functionality
@@ -485,6 +486,115 @@ function animateCounter(element, start, end, duration, hasPlus, hasPercent, orig
     }, 16);
 }
 
+// Chatbot Functionality
+function initChatbot() {
+    const mascotButton = document.getElementById('mascotButton');
+    const chatbotModal = document.getElementById('chatbotModal');
+    const closeChatbot = document.getElementById('closeChatbot');
+    const chatbotInput = document.getElementById('chatbotInput');
+    const sendMessage = document.getElementById('sendMessage');
+    const chatbotMessages = document.getElementById('chatbotMessages');
+    const quickReplies = document.querySelectorAll('.quick-reply');
+
+    if (!mascotButton || !chatbotModal) return;
+
+    // Open chatbot
+    mascotButton.addEventListener('click', function() {
+        chatbotModal.classList.add('active');
+        mascotButton.style.display = 'none';
+        chatbotInput.focus();
+    });
+
+    // Close chatbot
+    closeChatbot.addEventListener('click', function() {
+        chatbotModal.classList.remove('active');
+        mascotButton.style.display = 'block';
+    });
+
+    // Send message on button click
+    sendMessage.addEventListener('click', function() {
+        sendUserMessage();
+    });
+
+    // Send message on Enter key
+    chatbotInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            sendUserMessage();
+        }
+    });
+
+    // Quick reply buttons
+    quickReplies.forEach(button => {
+        button.addEventListener('click', function() {
+            const message = this.getAttribute('data-message');
+            addUserMessage(message);
+            setTimeout(() => {
+                handleBotResponse(message);
+            }, 600);
+        });
+    });
+
+    function sendUserMessage() {
+        const message = chatbotInput.value.trim();
+        if (message === '') return;
+
+        addUserMessage(message);
+        chatbotInput.value = '';
+        
+        // Simulate bot response
+        setTimeout(() => {
+            handleBotResponse(message);
+        }, 600);
+    }
+
+    function addUserMessage(text) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message user-message';
+        messageDiv.innerHTML = `<div class="message-content">${text}</div>`;
+        chatbotMessages.appendChild(messageDiv);
+        scrollToBottom();
+    }
+
+    function addBotMessage(text) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message bot-message';
+        messageDiv.innerHTML = `<div class="message-content">${text}</div>`;
+        chatbotMessages.appendChild(messageDiv);
+        scrollToBottom();
+    }
+
+    function handleBotResponse(userMessage) {
+        const lowerMessage = userMessage.toLowerCase();
+        let response = '';
+
+        if (lowerMessage.includes('plano') || lowerMessage.includes('preço') || lowerMessage.includes('valor')) {
+            response = '💰 Temos planos para todos os perfis! Temos o plano <strong>Estudante</strong> (gratuito), <strong>Professor</strong> (R$ 29,90/mês) e <strong>Escola</strong> (personalizado). <a href="precos.html">Veja todos os planos aqui</a>.';
+        } else if (lowerMessage.includes('funciona') || lowerMessage.includes('como') || lowerMessage.includes('recurso')) {
+            response = '🎯 A Text79 é uma plataforma completa que une autorregulação e IA para desenvolvimento da escrita. Oferecemos correção inteligente, feedback personalizado e evolução contínua. <a href="recursos.html">Conheça todos os recursos</a>.';
+        } else if (lowerMessage.includes('demonstração') || lowerMessage.includes('demo') || lowerMessage.includes('agendar')) {
+            response = '📅 Ótimo! Gostaria de agendar uma demonstração personalizada? <a href="contato.html">Clique aqui para agendar</a> ou me informe seu email que entraremos em contato!';
+        } else if (lowerMessage.includes('contato') || lowerMessage.includes('falar') || lowerMessage.includes('email')) {
+            response = '📧 Você pode entrar em contato conosco através da nossa <a href="contato.html">página de contato</a> ou pelo email: contato@text79.com.br';
+        } else if (lowerMessage.includes('grátis') || lowerMessage.includes('gratuito') || lowerMessage.includes('free')) {
+            response = '🎁 Sim! Temos o plano Estudante completamente gratuito com recursos essenciais para desenvolvimento da escrita. <a href="precos.html">Começar agora</a>!';
+        } else if (lowerMessage.includes('escola') || lowerMessage.includes('instituição')) {
+            response = '🏫 Temos soluções especiais para escolas e instituições de ensino! Oferecemos dashboard administrativo, relatórios detalhados e suporte dedicado. <a href="contato.html">Entre em contato para uma proposta personalizada</a>.';
+        } else if (lowerMessage.includes('ia') || lowerMessage.includes('inteligência artificial')) {
+            response = '🤖 Nossa IA é usada de forma estratégica e no momento certo do processo de escrita, sempre priorizando a autorregulação do estudante. Não fazemos correção automática indiscriminada!';
+        } else if (lowerMessage.includes('obrigado') || lowerMessage.includes('valeu')) {
+            response = '😊 Por nada! Estou aqui sempre que precisar. Boa escrita!';
+        } else {
+            response = 'Entendo! Posso ajudá-lo com informações sobre:<br><br>• <strong>Planos e Preços</strong><br>• <strong>Recursos da Plataforma</strong><br>• <strong>Demonstração</strong><br>• <strong>Contato</strong><br><br>Sobre o que você gostaria de saber mais? 🤔';
+        }
+
+        addBotMessage(response);
+    }
+
+    function scrollToBottom() {
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+}
+
 // Export functions for external use
 window.Text79 = {
     validateForm,
@@ -493,5 +603,6 @@ window.Text79 = {
     clearFieldError,
     isValidEmail,
     initParallaxEffect,
-    initCounterAnimation
+    initCounterAnimation,
+    initChatbot
 };
