@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initHeaderScroll();
     initWhatsAppButton();
     initResourceTabs();
+    initParallaxEffect();
+    initCounterAnimation();
 });
 
 // Resource Tabs Functionality
@@ -437,11 +439,93 @@ document.addEventListener('DOMContentLoaded', function() {
     initLazyLoading();
 });
 
+// Parallax Effect for Hero Section
+function initParallaxEffect() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const heroContent = hero.querySelector('.hero-content');
+        const heroImage = hero.querySelector('.hero-image');
+        
+        if (heroContent && scrolled < window.innerHeight) {
+            heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+            heroContent.style.opacity = 1 - (scrolled / 800);
+        }
+        
+        if (heroImage && scrolled < window.innerHeight) {
+            heroImage.style.transform = `translateY(${scrolled * 0.15}px) scale(${1 - scrolled / 3000})`;
+        }
+    });
+}
+
+// Counter Animation for Stats
+function initCounterAnimation() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const text = target.textContent;
+                
+                // Extract number from text (handles formats like "+50Mil", "+200", "+25%")
+                const hasPlus = text.includes('+');
+                const hasPercent = text.includes('%');
+                const numMatch = text.match(/\d+/);
+                
+                if (numMatch) {
+                    const finalNumber = parseInt(numMatch[0]);
+                    animateCounter(target, 0, finalNumber, 2000, hasPlus, hasPercent, text);
+                }
+                
+                observer.unobserve(target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    statNumbers.forEach(stat => observer.observe(stat));
+}
+
+function animateCounter(element, start, end, duration, hasPlus, hasPercent, originalText) {
+    const range = end - start;
+    const increment = range / (duration / 16);
+    let current = start;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= end) {
+            current = end;
+            clearInterval(timer);
+        }
+        
+        // Format the number based on original format
+        let displayText = Math.floor(current).toString();
+        
+        if (originalText.includes('Mil')) {
+            displayText = Math.floor(current) + 'Mil';
+        }
+        
+        if (hasPlus) {
+            displayText = '+' + displayText;
+        }
+        
+        if (hasPercent) {
+            displayText = displayText + '%';
+        }
+        
+        element.textContent = displayText;
+    }, 16);
+}
+
 // Export functions for external use
-window.Escrita360 = {
+window.Text79 = {
     validateForm,
     animateCounter,
     showFieldError,
     clearFieldError,
-    isValidEmail
+    isValidEmail,
+    initParallaxEffect,
+    initCounterAnimation
 };
