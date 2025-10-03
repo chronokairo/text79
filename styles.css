@@ -5581,3 +5581,467 @@ a {
 }
 
 /* Responsive Design
+/* ============================================
+   NEW HOME SECTIONS STYLES
+   ============================================ */
+
+/* Features Section */
+.features-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f5f9fc 0%, #ffffff 100%);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px var(--shadow);
+    transition: all 0.4s var(--transition-smooth);
+    border: 1px solid rgba(74, 143, 212, 0.1);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px var(--shadow-hover);
+}
+
+.feature-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.feature-icon-wrapper i {
+    font-size: 2rem;
+    color: white;
+}
+
+.feature-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.feature-card p {
+    color: var(--text-gray);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.feature-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.feature-link:hover {
+    gap: 1rem;
+}
+
+.feature-link i {
+    font-size: 0.9rem;
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 100px 0;
+    background: white;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.step-item {
+    position: relative;
+    padding: 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #f8fbfd 0%, #ffffff 100%);
+    border-radius: 20px;
+    border: 2px solid rgba(74, 143, 212, 0.1);
+    transition: all 0.4s var(--transition-smooth);
+}
+
+.step-item:hover {
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(74, 143, 212, 0.3);
+}
+
+.step-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(74, 143, 212, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.step-item:hover .step-icon {
+    background: var(--primary-color);
+    transform: rotate(360deg);
+}
+
+.step-icon i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.step-item:hover .step-icon i {
+    color: white;
+}
+
+.step-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.step-item p {
+    color: var(--text-gray);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f5f9fc 0%, #ffffff 100%);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px var(--shadow);
+    transition: all 0.4s var(--transition-smooth);
+    border-left: 4px solid var(--primary-color);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px var(--shadow-hover);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.testimonial-avatar i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.testimonial-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    color: var(--text-dark);
+}
+
+.testimonial-info p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin: 0;
+}
+
+.testimonial-rating {
+    display: flex;
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-rating i {
+    color: #ffc107;
+    font-size: 1rem;
+}
+
+.testimonial-text {
+    color: var(--text-gray);
+    line-height: 1.8;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Comparison Section */
+.comparison-section {
+    padding: 100px 0;
+    background: white;
+}
+
+.comparison-table {
+    max-width: 900px;
+    margin: 3rem auto 0;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px var(--shadow);
+}
+
+.comparison-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.comparison-header > div {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.comparison-header .comparison-feature {
+    text-align: left;
+}
+
+.comparison-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    border-bottom: 1px solid rgba(74, 143, 212, 0.1);
+    transition: all 0.3s ease;
+}
+
+.comparison-row:hover {
+    background: rgba(74, 143, 212, 0.05);
+}
+
+.comparison-row > div {
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.comparison-feature {
+    text-align: left !important;
+    justify-content: flex-start !important;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.comparison-text79 i {
+    font-size: 1.5rem;
+    color: #4caf50;
+}
+
+.comparison-others i {
+    font-size: 1.5rem;
+}
+
+.comparison-others .fa-times-circle {
+    color: #f44336;
+}
+
+.comparison-others .fa-minus-circle {
+    color: #ff9800;
+}
+
+/* Enhanced CTA Section */
+.cta {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.cta-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cta-content h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-content p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.btn-large {
+    padding: 1.2rem 3rem;
+    font-size: 1.1rem;
+}
+
+.cta .btn-primary {
+    background: white;
+    color: var(--primary-color);
+}
+
+.cta .btn-primary:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-3px);
+}
+
+.cta .btn-secondary {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.cta .btn-secondary:hover {
+    background: white;
+    color: var(--primary-color);
+}
+
+/* Responsive Design for New Sections */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .comparison-table {
+        font-size: 0.9rem;
+    }
+    
+    .comparison-header,
+    .comparison-row {
+        grid-template-columns: 1.5fr 1fr 1fr;
+    }
+    
+    .comparison-header > div,
+    .comparison-row > div {
+        padding: 1rem 0.5rem;
+    }
+    
+    .comparison-feature {
+        font-size: 0.85rem;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-content p {
+        font-size: 1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-large {
+        width: 100%;
+        padding: 1rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .comparison-header,
+    .comparison-row {
+        font-size: 0.75rem;
+    }
+    
+    .comparison-text79 i,
+    .comparison-others i {
+        font-size: 1.2rem;
+    }
+}
