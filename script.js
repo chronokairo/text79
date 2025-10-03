@@ -144,13 +144,6 @@ function initScrollAnimations() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate-in');
-                // Add staggered animation for grid items
-                if (entry.target.classList.contains('audience-grid') || 
-                    entry.target.classList.contains('diferencial-grid') ||
-                    entry.target.classList.contains('recursos-grid') ||
-                    entry.target.classList.contains('pricing-grid')) {
-                    animateGridItems(entry.target);
-                }
             }
         });
     }, observerOptions);
@@ -160,29 +153,11 @@ function initScrollAnimations() {
     sections.forEach(section => {
         observer.observe(section);
     });
-
-    // Observe cards for staggered animation
-    const cards = document.querySelectorAll('.audience-card, .diferencial-item, .recurso-card, .pricing-card');
-    cards.forEach(card => {
-        observer.observe(card);
-    });
-}
-
-// Animate grid items with stagger effect
-function animateGridItems(grid) {
-    const items = grid.children;
-    Array.from(items).forEach((item, index) => {
-        setTimeout(() => {
-            item.style.opacity = '1';
-            item.style.transform = 'translateY(0)';
-        }, index * 100);
-    });
 }
 
 // Header Scroll Effect
 function initHeaderScroll() {
     const header = document.querySelector('.header');
-    let lastScrollY = window.scrollY;
 
     window.addEventListener('scroll', function() {
         const currentScrollY = window.scrollY;
@@ -192,15 +167,6 @@ function initHeaderScroll() {
         } else {
             header.classList.remove('scrolled');
         }
-
-        // Hide/show header on scroll
-        if (currentScrollY > lastScrollY && currentScrollY > 200) {
-            header.style.transform = 'translateY(-100%)';
-        } else {
-            header.style.transform = 'translateY(0)';
-        }
-        
-        lastScrollY = currentScrollY;
     });
 }
 

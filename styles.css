@@ -218,9 +218,9 @@ p {
 
 .nav-menu a {
     text-decoration: none;
-    color: white;
+    color: #00008A; /* Dark blue text for visibility */
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; /* Smooth animation for all changes */
     position: relative;
     padding: 0.5rem 0;
 }
@@ -242,7 +242,9 @@ p {
 }
 
 .nav-menu a:hover {
-    transform: translateY(-2px);
+    background-color: #f0f8ff; /* Light blue highlight on hover */
+    color: #00008A; /* Keep text dark blue */
+    border-bottom: 2px solid #00008A; /* Add underline for emphasis */
 }
 
 .hamburger {
@@ -1645,6 +1647,27 @@ p {
     }
 }
 
+/* Navigation bar styles */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff; /* Assuming white background; adjust if different */
+    z-index: 1000;
+    /* ...existing code... */
+}
+
+.nav-menu a {
+    color: #00008A; /* Dark blue text for visibility */
+    transition: all 0.3s ease; /* Smooth animation for all changes */
+}
+
+.nav-menu a:hover {
+    background-color: #f0f8ff; /* Light blue highlight on hover */
+    color: #00008A; /* Keep text dark blue */
+    border-bottom: 2px solid #00008A; /* Add underline for emphasis */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     /* Navigation */
@@ -1871,52 +1894,13 @@ p {
     }
 }
 
-/* Animations */
-@media (prefers-reduced-motion: no-preference) {
-    .audience-card,
-    .diferencial-item,
-    .recurso-card,
-    .pricing-card {
-        opacity: 0;
-        transform: translateY(40px);
-        animation: fadeInUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-    }
-
-    .audience-card:nth-child(1),
-    .diferencial-item:nth-child(1),
-    .recurso-card:nth-child(1),
-    .pricing-card:nth-child(1) {
-        animation-delay: 0.1s;
-    }
-
-    .audience-card:nth-child(2),
-    .diferencial-item:nth-child(2),
-    .recurso-card:nth-child(2),
-    .pricing-card:nth-child(2) {
-        animation-delay: 0.2s;
-    }
-
-    .audience-card:nth-child(3),
-    .diferencial-item:nth-child(3),
-    .recurso-card:nth-child(3),
-    .pricing-card:nth-child(3) {
-        animation-delay: 0.3s;
-    }
-
-    .diferencial-item:nth-child(4),
-    .recurso-card:nth-child(4) {
-        animation-delay: 0.4s;
-    }
-
-    .diferencial-item:nth-child(5),
-    .recurso-card:nth-child(5) {
-        animation-delay: 0.5s;
-    }
-
-    .diferencial-item:nth-child(6),
-    .recurso-card:nth-child(6) {
-        animation-delay: 0.6s;
-    }
+/* Animations - Simplified for better visibility */
+.audience-card,
+.diferencial-item,
+.recurso-card,
+.pricing-card {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 /* Utility Classes */
