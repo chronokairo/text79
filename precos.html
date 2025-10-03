@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preços - Text79</title>
+    <meta name="description" content="Planos flexíveis e acessíveis para estudantes, professores e escolas">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="page-precos">
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="logo">
+                        <a href="index.html"><h2>Text79</h2></a>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="recursos.html">Recursos</a></li>
+                        <li><a href="precos.html" class="active">Preços</a></li>
+                        <li><a href="para-quem.html">Para Quem</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="#" class="btn-login">Entrar</a></li>
+                    </ul>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero precos-hero">
+        <div class="container">
+            <div class="page-hero-content fade-in-up">
+                <h1>Planos que se adaptam à sua necessidade</h1>
+                <p>Escolha o plano ideal para transformar o processo de escrita e alcance resultados extraordinários</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Toggle -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="pricing-toggle fade-in">
+                <span>Mensal</span>
+                <input type="checkbox" id="pricing-toggle" class="toggle">
+                <label for="pricing-toggle" class="toggle-label"></label>
+                <span>Anual <small>(Economize 30%)</small></span>
+            </div>
+
+            <!-- Pricing Grid -->
+            <div class="pricing-grid">
+                <div class="pricing-card starter hover-lift">
+                    <div class="plan-header">
+                        <h3>Gratuito</h3>
+                        <div class="plan-badge">Ideal para começar</div>
+                    </div>
+                    <div class="price">
+                        <span class="currency">R$</span>
+                        <span class="amount">0</span>
+                        <span class="period">/sempre</span>
+                    </div>
+                    <p class="plan-description">Perfeito para experimentar nossa metodologia de escrita autorregulada</p>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> <strong>3 correções</strong> por mês</li>
+                        <li><i class="fas fa-check"></i> Processo completo de escrita</li>
+                        <li><i class="fas fa-check"></i> Análise das 5 competências</li>
+                        <li><i class="fas fa-check"></i> Banco de temas limitado</li>
+                        <li><i class="fas fa-check"></i> Relatórios básicos</li>
+                        <li><i class="fas fa-check"></i> Painel de sentimentos</li>
+                        <li><i class="fas fa-check"></i> Estratégias autorreguladas</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">Começar Grátis</a>
+                </div>
+                
+                <div class="pricing-card popular hover-lift">
+                    <div class="popular-badge">Mais Escolhido</div>
+                    <div class="plan-header">
+                        <h3>Professor</h3>
+                        <div class="plan-badge">Solução completa</div>
+                    </div>
+                    <div class="price">
+                        <span class="currency">R$</span>
+                        <span class="amount" data-monthly="47" data-yearly="33">47</span>
+                        <span class="period">/mês</span>
+                    </div>
+                    <p class="plan-description">Ideal para professores independentes e pequenas turmas</p>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Até <strong>30 alunos</strong></li>
+                        <li><i class="fas fa-check"></i> <strong>Correções ilimitadas</strong></li>
+                        <li><i class="fas fa-check"></i> Dashboard completo</li>
+                        <li><i class="fas fa-check"></i> Relatórios detalhados</li>
+                        <li><i class="fas fa-check"></i> Banco completo de temas</li>
+                        <li><i class="fas fa-check"></i> Suporte prioritário</li>
+                        <li><i class="fas fa-check"></i> Treinamento incluído</li>
+                        <li><i class="fas fa-check"></i> Gestão de turmas</li>
+                        <li><i class="fas fa-check"></i> Habilidades BNCC</li>
+                        <li><i class="fas fa-check"></i> Acompanhamento em tempo real</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Escolher Professor</a>
+                </div>
+                
+                <div class="pricing-card enterprise hover-lift">
+                    <div class="plan-header">
+                        <h3>Escola</h3>
+                        <div class="plan-badge">Máximo resultado</div>
+                    </div>
+                    <div class="price">
+                        <span class="currency">R$</span>
+                        <span class="amount" data-monthly="197" data-yearly="138">197</span>
+                        <span class="period">/mês</span>
+                    </div>
+                    <p class="plan-description">Solução completa para instituições de ensino de todos os tamanhos</p>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> <strong>Usuários ilimitados</strong></li>
+                        <li><i class="fas fa-check"></i> <strong>Múltiplos professores</strong></li>
+                        <li><i class="fas fa-check"></i> Dashboards administrativos</li>
+                        <li><i class="fas fa-check"></i> Relatórios institucionais</li>
+                        <li><i class="fas fa-check"></i> White-label disponível</li>
+                        <li><i class="fas fa-check"></i> Integração com LMS</li>
+                        <li><i class="fas fa-check"></i> Suporte dedicado 24/7</li>
+                        <li><i class="fas fa-check"></i> Consultoria pedagógica</li>
+                        <li><i class="fas fa-check"></i> Gerente de conta exclusivo</li>
+                        <li><i class="fas fa-check"></i> Treinamento personalizado</li>
+                        <li><i class="fas fa-check"></i> API completa</li>
+                        <li><i class="fas fa-check"></i> SLA garantido</li>
+                    </ul>
+                    <a href="contato.html" class="btn btn-outline">Agendar Demonstração</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+        <div class="container">
+            <h2 class="fade-in">Comparação Detalhada de Planos</h2>
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Recursos</th>
+                            <th>Gratuito</th>
+                            <th class="popular-column">Professor</th>
+                            <th>Escola</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Correções por mês</strong></td>
+                            <td>3</td>
+                            <td class="popular-column">Ilimitadas</td>
+                            <td>Ilimitadas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Número de alunos</strong></td>
+                            <td>1</td>
+                            <td class="popular-column">Até 30</td>
+                            <td>Ilimitados</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Processo de escrita autorregulada</strong></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td class="popular-column"><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Análise das 5 competências ENEM</strong></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td class="popular-column"><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Painel de sentimentos</strong></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td class="popular-column"><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Banco de temas</strong></td>
+                            <td>Limitado</td>
+                            <td class="popular-column">Completo</td>
+                            <td>Completo + Personalizado</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dashboard de acompanhamento</strong></td>
+                            <td>Básico</td>
+                            <td class="popular-column">Completo</td>
+                            <td>Administrativo Avançado</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Relatórios</strong></td>
+                            <td>Básicos</td>
+                            <td class="popular-column">Detalhados</td>
+                            <td>Institucionais Completos</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gestão de turmas</strong></td>
+                            <td><i class="fas fa-times text-muted"></i></td>
+                            <td class="popular-column"><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Habilidades BNCC integradas</strong></td>
+                            <td><i class="fas fa-times text-muted"></i></td>
+                            <td class="popular-column"><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Múltiplos professores</strong></td>
+                            <td><i class="fas fa-times text-muted"></i></td>
+                            <td class="popular-column"><i class="fas fa-times text-muted"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td><strong>White-label</strong></td>
+                            <td><i class="fas fa-times text-muted"></i></td>
+                            <td class="popular-column"><i class="fas fa-times text-muted"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Integração LMS</strong></td>
+                            <td><i class="fas fa-times text-muted"></i></td>
+                            <td class="popular-column"><i class="fas fa-times text-muted"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Suporte</strong></td>
+                            <td>Email</td>
+                            <td class="popular-column">Prioritário</td>
+                            <td>Dedicado 24/7</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Consultoria pedagógica</strong></td>
+                            <td><i class="fas fa-times text-muted"></i></td>
+                            <td class="popular-column"><i class="fas fa-times text-muted"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gerente de conta</strong></td>
+                            <td><i class="fas fa-times text-muted"></i></td>
+                            <td class="popular-column"><i class="fas fa-times text-muted"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="fade-in">Perguntas Frequentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item hover-lift">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Posso testar antes de comprar?</h3>
+                    </div>
+                    <p>Sim! O plano gratuito permite que você experimente toda a metodologia de escrita autorregulada com 3 correções por mês. Não é necessário cartão de crédito.</p>
+                </div>
+                <div class="faq-item hover-lift">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Como funciona o pagamento anual?</h3>
+                    </div>
+                    <p>Ao optar pelo plano anual, você economiza 30% e faz um único pagamento no início do período. É possível parcelar em até 12x sem juros.</p>
+                </div>
+                <div class="faq-item hover-lift">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Posso cancelar a qualquer momento?</h3>
+                    </div>
+                    <p>Sim, você pode cancelar sua assinatura a qualquer momento. No plano mensal, a cobrança é interrompida imediatamente. No anual, você continua usando até o fim do período contratado.</p>
+                </div>
+                <div class="faq-item hover-lift">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>O que acontece se exceder o limite de alunos?</h3>
+                    </div>
+                    <p>No plano Professor, você pode fazer upgrade a qualquer momento. Também oferecemos planos customizados para professores que precisam de mais vagas.</p>
+                </div>
+                <div class="faq-item hover-lift">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Oferecem treinamento para escolas?</h3>
+                    </div>
+                    <p>Sim! O plano Escola inclui treinamento personalizado para toda a equipe pedagógica, além de consultoria contínua e material de apoio.</p>
+                </div>
+                <div class="faq-item hover-lift">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Como funciona a integração com LMS?</h3>
+                    </div>
+                    <p>Nossa API permite integração com principais plataformas de gestão de aprendizagem (Moodle, Canvas, Google Classroom, etc). Nossa equipe técnica auxilia na implementação.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content fade-in-up">
+                <h2>Pronto para revolucionar a escrita?</h2>
+                <p>Comece gratuitamente e veja a diferença que a autorregulação faz no desenvolvimento da escrita.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary btn-large">Começar Grátis</a>
+                    <a href="contato.html" class="btn btn-secondary btn-large">Falar com Especialista</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Text79</h3>
+                    <p>A plataforma de redações mais completa para ENEM e vestibulares.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Produto</h4>
+                    <ul>
+                        <li><a href="recursos.html">Recursos</a></li>
+                        <li><a href="precos.html">Preços</a></li>
+                        <li><a href="#">Temas ENEM</a></li>
+                        <li><a href="para-quem.html">Para Escolas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Educação</h4>
+                    <ul>
+                        <li><a href="#">Como Estudar</a></li>
+                        <li><a href="#">Dicas de Redação</a></li>
+                        <li><a href="#">Competências ENEM</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Suporte</h4>
+                    <ul>
+                        <li><a href="#">Central de Ajuda</a></li>
+                        <li><a href="#">Tutoriais</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="#">Comunidade</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Text79. Todos os direitos reservados.</p>
+                <a href="#" class="whatsapp-link">
+                    <i class="fab fa-whatsapp"></i>
+                    Fale conosco pelo WhatsApp
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float">
+        <a href="#" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="pages-scripts.js"></script>
+</body>
+</html>

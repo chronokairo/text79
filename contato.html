@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Text79</title>
+    <meta name="description" content="Entre em contato com a Text79. Estamos prontos para ajudar você a transformar a escrita">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="page-contato">
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="logo">
+                        <a href="index.html"><h2>Text79</h2></a>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="recursos.html">Recursos</a></li>
+                        <li><a href="precos.html">Preços</a></li>
+                        <li><a href="para-quem.html">Para Quem</a></li>
+                        <li><a href="contato.html" class="active">Contato</a></li>
+                        <li><a href="#" class="btn-login">Entrar</a></li>
+                    </ul>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero contato-hero">
+        <div class="container">
+            <div class="page-hero-content fade-in-up">
+                <h1>Vamos conversar?</h1>
+                <p>Estamos prontos para ajudar você a transformar o processo de escrita. Entre em contato conosco!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Main Section -->
+    <section class="contact-main">
+        <div class="container">
+            <div class="contact-wrapper">
+                <!-- Contact Form -->
+                <div class="contact-form-section hover-lift">
+                    <h2>Envie sua mensagem</h2>
+                    <p class="form-subtitle">Preencha o formulário abaixo e retornaremos em até 24 horas</p>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nome">Nome completo *</label>
+                                <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail *</label>
+                                <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="telefone">Telefone/WhatsApp *</label>
+                                <input type="tel" id="telefone" name="telefone" required placeholder="(00) 00000-0000">
+                            </div>
+                            <div class="form-group">
+                                <label for="perfil">Você é: *</label>
+                                <select id="perfil" name="perfil" required>
+                                    <option value="">Selecione...</option>
+                                    <option value="estudante">Estudante</option>
+                                    <option value="professor">Professor</option>
+                                    <option value="escola">Representante de Escola</option>
+                                    <option value="cursinho">Curso Preparatório</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="instituicao">Instituição (opcional)</label>
+                            <input type="text" id="instituicao" name="instituicao" placeholder="Nome da sua escola, cursinho ou universidade">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="assunto">Assunto *</label>
+                            <select id="assunto" name="assunto" required>
+                                <option value="">Selecione...</option>
+                                <option value="demonstracao">Solicitar Demonstração</option>
+                                <option value="duvidas">Dúvidas sobre a Plataforma</option>
+                                <option value="precos">Informações sobre Preços</option>
+                                <option value="suporte">Suporte Técnico</option>
+                                <option value="parceria">Proposta de Parceria</option>
+                                <option value="outro">Outro Assunto</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem *</label>
+                            <textarea id="mensagem" name="mensagem" rows="6" required placeholder="Conte-nos como podemos ajudar..."></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="aceito" name="aceito" required>
+                            <label for="aceito">Aceito receber comunicações da Text79 e concordo com a <a href="#">Política de Privacidade</a></label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-section">
+                    <div class="contact-info-card hover-lift">
+                        <h3>Outras formas de contato</h3>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-content">
+                                <h4>E-mail</h4>
+                                <p>contato@text79.com.br</p>
+                                <p class="method-detail">Respondemos em até 24h</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="method-content">
+                                <h4>WhatsApp</h4>
+                                <p>(11) 99999-9999</p>
+                                <p class="method-detail">Atendimento: Seg-Sex, 9h-18h</p>
+                                <a href="#" class="btn btn-outline btn-sm">Iniciar Conversa</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-content">
+                                <h4>Telefone</h4>
+                                <p>(11) 3000-0000</p>
+                                <p class="method-detail">Atendimento: Seg-Sex, 9h-18h</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card social-card hover-lift">
+                        <h3>Siga-nos nas redes sociais</h3>
+                        <div class="social-links-large">
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="#" class="social-link" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                                <span>YouTube</span>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                                <span>Twitter</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card quick-actions-card hover-lift">
+                        <h3>Ações rápidas</h3>
+                        <div class="quick-actions">
+                            <a href="precos.html" class="quick-action-btn">
+                                <i class="fas fa-rocket"></i>
+                                <span>Começar Grátis</span>
+                            </a>
+                            <a href="recursos.html" class="quick-action-btn">
+                                <i class="fas fa-book"></i>
+                                <span>Ver Recursos</span>
+                            </a>
+                            <a href="#" class="quick-action-btn">
+                                <i class="fas fa-question-circle"></i>
+                                <span>Central de Ajuda</span>
+                            </a>
+                            <a href="precos.html" class="quick-action-btn">
+                                <i class="fas fa-calendar"></i>
+                                <span>Agendar Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Quick Section -->
+    <section class="faq-quick-section">
+        <div class="container">
+            <h2 class="fade-in">Perguntas Frequentes</h2>
+            <p class="section-subtitle">Encontre respostas rápidas antes de entrar em contato</p>
+            
+            <div class="faq-quick-grid">
+                <div class="faq-quick-item hover-lift">
+                    <i class="fas fa-clock"></i>
+                    <h3>Qual o tempo de resposta?</h3>
+                    <p>Respondemos todas as mensagens em até 24 horas úteis. Para urgências, utilize o WhatsApp.</p>
+                </div>
+                <div class="faq-quick-item hover-lift">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Como agendar uma demonstração?</h3>
+                    <p>Preencha o formulário selecionando "Solicitar Demonstração" ou clique no botão "Agendar Demo".</p>
+                </div>
+                <div class="faq-quick-item hover-lift">
+                    <i class="fas fa-gift"></i>
+                    <h3>O teste é realmente grátis?</h3>
+                    <p>Sim! Não solicitamos cartão de crédito e você pode usar gratuitamente para sempre com o plano básico.</p>
+                </div>
+                <div class="faq-quick-item hover-lift">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Oferecem consultoria?</h3>
+                    <p>Sim! Planos para escolas incluem consultoria pedagógica personalizada.</p>
+                </div>
+                <div class="faq-quick-item hover-lift">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Há treinamento disponível?</h3>
+                    <p>Todos os planos pagos incluem treinamento. Escolas recebem treinamento personalizado completo.</p>
+                </div>
+                <div class="faq-quick-item hover-lift">
+                    <i class="fas fa-headset"></i>
+                    <h3>Como funciona o suporte?</h3>
+                    <p>Oferecemos suporte por e-mail, WhatsApp e telefone. Planos superiores têm suporte prioritário.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Locations (optional) -->
+    <section class="locations-section">
+        <div class="container">
+            <h2 class="fade-in">Nossos Escritórios</h2>
+            <div class="locations-grid">
+                <div class="location-card hover-lift">
+                    <div class="location-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>São Paulo - SP</h3>
+                    <p>Av. Paulista, 1000 - Sala 500</p>
+                    <p>Bela Vista, São Paulo - SP</p>
+                    <p>CEP: 01310-100</p>
+                </div>
+                <div class="location-card hover-lift">
+                    <div class="location-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Rio de Janeiro - RJ</h3>
+                    <p>Av. Rio Branco, 200 - Sala 300</p>
+                    <p>Centro, Rio de Janeiro - RJ</p>
+                    <p>CEP: 20040-000</p>
+                </div>
+                <div class="location-card hover-lift">
+                    <div class="location-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Brasília - DF</h3>
+                    <p>SCS Q. 01, Bloco A - Sala 100</p>
+                    <p>Asa Sul, Brasília - DF</p>
+                    <p>CEP: 70300-000</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content fade-in-up">
+                <h2>Prefere começar por conta própria?</h2>
+                <p>Crie sua conta gratuita agora e comece a transformar sua escrita imediatamente.</p>
+                <a href="precos.html" class="btn btn-primary btn-large">Criar Conta Grátis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Text79</h3>
+                    <p>A plataforma de redações mais completa para ENEM e vestibulares.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Produto</h4>
+                    <ul>
+                        <li><a href="recursos.html">Recursos</a></li>
+                        <li><a href="precos.html">Preços</a></li>
+                        <li><a href="#">Temas ENEM</a></li>
+                        <li><a href="para-quem.html">Para Escolas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Educação</h4>
+                    <ul>
+                        <li><a href="#">Como Estudar</a></li>
+                        <li><a href="#">Dicas de Redação</a></li>
+                        <li><a href="#">Competências ENEM</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Suporte</h4>
+                    <ul>
+                        <li><a href="#">Central de Ajuda</a></li>
+                        <li><a href="#">Tutoriais</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="#">Comunidade</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Text79. Todos os direitos reservados.</p>
+                <a href="#" class="whatsapp-link">
+                    <i class="fab fa-whatsapp"></i>
+                    Fale conosco pelo WhatsApp
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float">
+        <a href="#" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="pages-scripts.js"></script>
+</body>
+</html>
