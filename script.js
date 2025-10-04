@@ -153,3 +153,171 @@ style.textContent = `
 `;
 
 document.head.appendChild(style);
+
+// =================================
+// CHATBOT FUNCTIONALITY
+// =================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const mascotButton = document.getElementById('mascotButton');
+    const chatbotModal = document.getElementById('chatbotModal');
+    const closeChatbot = document.getElementById('closeChatbot');
+    const chatbotInput = document.getElementById('chatbotInput');
+    const sendMessage = document.getElementById('sendMessage');
+    const chatbotMessages = document.getElementById('chatbotMessages');
+    const quickReplies = document.querySelectorAll('.quick-reply');
+
+    // Verificar se os elementos existem
+    if (!mascotButton || !chatbotModal) {
+        console.warn('Elementos do chatbot não encontrados');
+        return;
+    }
+
+    // Abrir chatbot ao clicar no mascote
+    mascotButton.addEventListener('click', function() {
+        chatbotModal.classList.add('active');
+        chatbotInput.focus();
+        // Adicionar animação
+        chatbotModal.style.animation = 'slideInUp 0.3s ease-out';
+    });
+
+    // Fechar chatbot
+    if (closeChatbot) {
+        closeChatbot.addEventListener('click', function() {
+            chatbotModal.style.animation = 'slideOutDown 0.3s ease-out';
+            setTimeout(() => {
+                chatbotModal.classList.remove('active');
+            }, 300);
+        });
+    }
+
+    // Fechar ao clicar fora do chatbot
+    chatbotModal.addEventListener('click', function(e) {
+        if (e.target === chatbotModal) {
+            chatbotModal.style.animation = 'slideOutDown 0.3s ease-out';
+            setTimeout(() => {
+                chatbotModal.classList.remove('active');
+            }, 300);
+        }
+    });
+
+    // Enviar mensagem ao clicar no botão
+    if (sendMessage && chatbotInput) {
+        sendMessage.addEventListener('click', function() {
+            sendUserMessage();
+        });
+
+        // Enviar mensagem ao pressionar Enter
+        chatbotInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendUserMessage();
+            }
+        });
+    }
+
+    // Respostas rápidas
+    quickReplies.forEach(button => {
+        button.addEventListener('click', function() {
+            const message = this.getAttribute('data-message');
+            addUserMessage(message);
+            respondToMessage(message);
+        });
+    });
+
+    // Função para enviar mensagem do usuário
+    function sendUserMessage() {
+        const message = chatbotInput.value.trim();
+        if (message) {
+            addUserMessage(message);
+            chatbotInput.value = '';
+            respondToMessage(message);
+        }
+    }
+
+    // Adicionar mensagem do usuário
+    function addUserMessage(text) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message user-message';
+        messageDiv.innerHTML = `
+            <div class="message-content">
+                ${text}
+            </div>
+        `;
+        chatbotMessages.appendChild(messageDiv);
+        scrollToBottom();
+    }
+
+    // Adicionar mensagem do bot
+    function addBotMessage(text) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message bot-message';
+        messageDiv.innerHTML = `
+            <div class="message-content">
+                ${text}
+            </div>
+        `;
+        chatbotMessages.appendChild(messageDiv);
+        scrollToBottom();
+    }
+
+    // Responder à mensagem
+    function respondToMessage(message) {
+        // Simular digitação
+        setTimeout(() => {
+            const lowerMessage = message.toLowerCase();
+            let response = '';
+
+            if (lowerMessage.includes('plano') || lowerMessage.includes('preço')) {
+                response = 'Ótimo! Temos planos para Estudantes (R$ 29,90/mês), Professores (R$ 49,90/mês) e Escolas (sob consulta). Qual deles te interessa? <a href="precos.html" style="color: var(--accent-blue); text-decoration: underline;">Ver todos os planos</a>';
+            } else if (lowerMessage.includes('funciona') || lowerMessage.includes('como')) {
+                response = 'A Text79 é uma plataforma completa de desenvolvimento da escrita autorregulada. Oferecemos ferramentas de IA, feedback personalizado, e recursos específicos para estudantes, professores e escolas. <a href="recursos.html" style="color: var(--accent-blue); text-decoration: underline;">Conheça nossos recursos</a>';
+            } else if (lowerMessage.includes('demo') || lowerMessage.includes('demonstra')) {
+                response = 'Que ótimo! Vamos agendar uma demonstração personalizada. Por favor, preencha nosso formulário de contato e entraremos em contato em até 24h. <a href="contato.html" style="color: var(--accent-blue); text-decoration: underline;">Ir para contato</a>';
+            } else if (lowerMessage.includes('estudante')) {
+                response = 'Para estudantes, oferecemos o plano Individual por R$ 29,90/mês com acesso completo às ferramentas de IA, feedback personalizado e recursos de autorregulação. <a href="para-quem.html#estudantes" style="color: var(--accent-blue); text-decoration: underline;">Saiba mais</a>';
+            } else if (lowerMessage.includes('professor') || lowerMessage.includes('docente')) {
+                response = 'Professores têm acesso ao plano Profissional (R$ 49,90/mês) com ferramentas de gestão de turmas, banco de atividades e relatórios detalhados. <a href="para-quem.html#professores" style="color: var(--accent-blue); text-decoration: underline;">Saiba mais</a>';
+            } else if (lowerMessage.includes('escola') || lowerMessage.includes('instituição')) {
+                response = 'Para escolas, oferecemos planos corporativos personalizados com treinamento da equipe, suporte dedicado e relatórios institucionais. Entre em contato para uma proposta! <a href="contato.html" style="color: var(--accent-blue); text-decoration: underline;">Falar com consultor</a>';
+            } else if (lowerMessage.includes('contato') || lowerMessage.includes('falar') || lowerMessage.includes('ajuda')) {
+                response = 'Claro! Você pode nos contatar através do formulário, WhatsApp ou e-mail. Nossa equipe está pronta para ajudar! <a href="contato.html" style="color: var(--accent-blue); text-decoration: underline;">Falar conosco</a>';
+            } else {
+                response = 'Entendo! Como posso ajudar você melhor? Posso explicar sobre nossos planos, recursos ou agendar uma demonstração. O que você gostaria de saber?';
+            }
+
+            addBotMessage(response);
+        }, 800);
+    }
+
+    // Rolar para o final das mensagens
+    function scrollToBottom() {
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+});
+
+// Adicionar CSS para animações do chatbot
+const chatbotStyle = document.createElement('style');
+chatbotStyle.textContent = `
+    @keyframes slideInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideOutDown {
+        from {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+    }
+`;
+document.head.appendChild(chatbotStyle);

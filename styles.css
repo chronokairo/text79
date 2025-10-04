@@ -2862,7 +2862,7 @@ html {
 .footer-brand p {
     font-size: var(--text-base);
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
+       color: rgba(255, 255, 255, 0.8);
     margin-bottom: var(--space-lg);
 }
 
