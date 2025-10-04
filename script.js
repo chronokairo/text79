@@ -514,3 +514,36 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// ==========================================
+// FUNCIONALIDADE FAQ ACORDEÃO
+// ==========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-accordion-item');
+    
+    if (faqItems.length > 0) {
+        faqItems.forEach(item => {
+            const header = item.querySelector('.faq-accordion-header');
+            
+            header.addEventListener('click', function() {
+                const isActive = item.classList.contains('active');
+                
+                // Fecha todos os itens
+                faqItems.forEach(faqItem => {
+                    faqItem.classList.remove('active');
+                });
+                
+                // Se não estava ativo, abre o item clicado
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+        
+        // Abre o primeiro item por padrão
+        if (faqItems[0]) {
+            faqItems[0].classList.add('active');
+        }
+    }
+});

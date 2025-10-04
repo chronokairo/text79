@@ -973,52 +973,121 @@ body {
 
 .comparison-section {
     padding: 5rem 0;
-    background: linear-gradient(180deg, var(--neutral-100) 0%, white 100%);
+    background: linear-gradient(180deg, var(--light-blue) 0%, white 50%, var(--lighter-blue) 100%);
+}
+
+.comparison-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--dark-blue);
+    font-size: 2.5rem;
+    font-weight: var(--font-extrabold);
+}
+
+.comparison-table-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow-x: auto;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 10px 40px rgba(64, 112, 183, 0.15);
 }
 
 .comparison-table {
-    max-width: 900px;
-    margin: 0 auto;
+    width: 100%;
     background: white;
-    border-radius: var(--radius-lg);
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--radius-xl);
     overflow: hidden;
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--neutral-200);
 }
 
-.comparison-header,
-.comparison-row {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: var(--space-md);
-    padding: var(--space-lg);
-    align-items: center;
+.comparison-table thead {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
 }
 
-.comparison-header {
-    background: var(--primary-blue);
+.comparison-table thead tr th {
     color: white;
+    padding: 1.5rem 2rem;
+    text-align: left;
     font-weight: var(--font-bold);
-    font-size: var(--text-sm);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.comparison-row {
+.comparison-table thead tr th:first-child {
+    width: 40%;
+}
+
+.comparison-table thead tr th.popular-column {
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--secondary-blue) 100%);
+    position: relative;
+    box-shadow: 0 4px 15px rgba(97, 194, 211, 0.3);
+}
+
+.comparison-table thead tr th.popular-column::after {
+    content: '⭐ MAIS POPULAR';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFD700;
+    color: var(--dark-blue);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: var(--font-extrabold);
+    letter-spacing: 1px;
+    box-shadow: 0 2px 10px rgba(255, 215, 0, 0.4);
+}
+
+.comparison-table tbody tr {
+    transition: all 0.3s ease;
     border-bottom: 1px solid var(--neutral-200);
-    transition: background 0.2s ease;
 }
 
-.comparison-row:hover {
-    background: var(--neutral-100);
+.comparison-table tbody tr:hover {
+    background: linear-gradient(90deg, transparent 0%, var(--light-blue) 50%, transparent 100%);
+    transform: scale(1.01);
 }
 
-.comparison-row:last-child {
+.comparison-table tbody tr:last-child {
     border-bottom: none;
 }
 
-.comparison-feature {
-    font-weight: var(--font-medium);
+.comparison-table tbody tr td {
+    padding: 1.2rem 2rem;
+    color: var(--neutral-700);
+    font-size: 0.95rem;
+    border-right: 1px solid var(--neutral-200);
+    transition: all 0.3s ease;
+}
+
+.comparison-table tbody tr td:first-child {
+    font-weight: var(--font-semibold);
     color: var(--neutral-900);
-    font-size: var(--text-base);
+}
+
+.comparison-table tbody tr td.popular-column {
+    background: linear-gradient(135deg, rgba(97, 194, 211, 0.08) 0%, rgba(57, 161, 219, 0.08) 100%);
+    font-weight: var(--font-semibold);
+    color: var(--primary-blue);
+    position: relative;
+}
+
+.comparison-table tbody tr:hover td.popular-column {
+    background: linear-gradient(135deg, rgba(97, 194, 211, 0.15) 0%, rgba(57, 161, 219, 0.15) 100%);
+}
+
+.comparison-table .text-success {
+    color: #28a745;
+    font-size: 1.5rem;
+}
+
+.comparison-table .text-muted {
+    color: #dc3545;
+    font-size: 1.2rem;
 }
 
 .comparison-text79,
@@ -1932,6 +2001,255 @@ body {
 .location-card p {
     color: #666;
     line-height: 1.7;
+}
+
+/* =================================
+   SUCCESS STORIES (PRICING PAGE)
+   ================================= */
+
+.success-stories-section {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, var(--lighter-blue) 0%, white 100%);
+}
+
+.success-stories-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--dark-blue);
+    font-size: 2.5rem;
+    font-weight: var(--font-extrabold);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--neutral-700);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.success-stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.success-story-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 4px 20px rgba(64, 112, 183, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+.success-story-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue) 0%, var(--accent-blue) 50%, var(--secondary-blue) 100%);
+}
+
+.success-story-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(64, 112, 183, 0.2);
+    border-color: var(--secondary-blue);
+}
+
+.success-quote {
+    margin-bottom: 1.5rem;
+}
+
+.success-quote i {
+    font-size: 2.5rem;
+    color: var(--secondary-blue);
+    opacity: 0.3;
+}
+
+.success-content {
+    margin-bottom: 2rem;
+}
+
+.success-content p {
+    color: var(--neutral-700);
+    line-height: 1.8;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.success-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--neutral-200);
+}
+
+.success-avatar {
+    flex-shrink: 0;
+}
+
+.success-avatar img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-blue);
+    box-shadow: 0 4px 10px rgba(64, 112, 183, 0.2);
+}
+
+.success-info h4 {
+    color: var(--dark-blue);
+    font-size: 1.1rem;
+    font-weight: var(--font-bold);
+    margin-bottom: 0.25rem;
+}
+
+.success-info p {
+    color: var(--neutral-700);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.success-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: var(--font-semibold);
+    box-shadow: 0 2px 8px rgba(64, 112, 183, 0.3);
+}
+
+.success-badge i {
+    font-size: 0.9rem;
+}
+
+/* =================================
+   FAQ SECTION (PRICING PAGE)
+   ================================= */
+
+.faq-section {
+    padding: 5rem 0;
+    background: white;
+}
+
+.faq-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--dark-blue);
+    font-size: 2.5rem;
+    font-weight: var(--font-extrabold);
+}
+
+.faq-accordion {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq-accordion-item {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 2px 15px rgba(64, 112, 183, 0.08);
+    overflow: hidden;
+    border: 2px solid var(--neutral-200);
+    transition: all 0.3s ease;
+}
+
+.faq-accordion-item:hover {
+    border-color: var(--primary-blue);
+    box-shadow: 0 4px 20px rgba(64, 112, 183, 0.15);
+}
+
+.faq-accordion-item.active {
+    border-color: var(--accent-blue);
+    box-shadow: 0 6px 25px rgba(64, 112, 183, 0.2);
+}
+
+.faq-accordion-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.faq-accordion-header:hover {
+    background: var(--light-blue);
+}
+
+.faq-accordion-item.active .faq-accordion-header {
+    background: linear-gradient(135deg, var(--light-blue) 0%, var(--lighter-blue) 100%);
+}
+
+.faq-accordion-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.faq-accordion-title i {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    flex-shrink: 0;
+}
+
+.faq-accordion-title h3 {
+    color: var(--dark-blue);
+    font-size: 1.1rem;
+    font-weight: var(--font-semibold);
+    margin: 0;
+}
+
+.faq-accordion-icon {
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+    transition: transform 0.3s ease;
+}
+
+.faq-accordion-item.active .faq-accordion-icon {
+    transform: rotate(180deg);
+    color: var(--accent-blue);
+}
+
+.faq-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 2rem;
+}
+
+.faq-accordion-item.active .faq-accordion-content {
+    max-height: 500px;
+    padding: 0 2rem 1.5rem 2rem;
+}
+
+.faq-accordion-content p {
+    color: var(--neutral-700);
+    line-height: 1.8;
+    font-size: 1rem;
+    margin: 0;
+    padding-top: 0.5rem;
 }
 
 /* =================================
@@ -3288,5 +3606,87 @@ section {
         right: 1rem;
         bottom: 100px;
         max-height: 500px;
+    }
+}
+/* =========================================
+   RESPONSIVE - NEW SECTIONS (PRICING PAGE)
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* Responsive - Comparison Table */
+    .comparison-table-wrapper {
+        border-radius: var(--radius-md);
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .comparison-table {
+        min-width: 600px;
+    }
+    
+    .comparison-table thead tr th {
+        padding: 1rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .comparison-table thead tr th.popular-column::after {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.6rem;
+    }
+    
+    .comparison-table tbody tr td {
+        padding: 0.8rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    /* Responsive - Success Stories */
+    .success-stories-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .success-story-card {
+        padding: 1.5rem;
+    }
+    
+    .success-content p {
+        font-size: 0.95rem;
+    }
+    
+    .success-info h4 {
+        font-size: 1rem;
+    }
+    
+    /* Responsive - FAQ Accordion */
+    .faq-accordion-item {
+        border-radius: var(--radius-md);
+    }
+    
+    .faq-accordion-header {
+        padding: 1rem 1.5rem;
+    }
+    
+    .faq-accordion-title {
+        gap: 0.8rem;
+    }
+    
+    .faq-accordion-title i {
+        font-size: 1.2rem;
+    }
+    
+    .faq-accordion-title h3 {
+        font-size: 1rem;
+    }
+    
+    .faq-accordion-content {
+        padding: 0 1.5rem;
+    }
+    
+    .faq-accordion-item.active .faq-accordion-content {
+        padding: 0 1.5rem 1rem 1.5rem;
+    }
+    
+    .faq-accordion-content p {
+        font-size: 0.9rem;
     }
 }
