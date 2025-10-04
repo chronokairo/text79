@@ -2862,7 +2862,7 @@ html {
 .footer-brand p {
     font-size: var(--text-base);
     line-height: 1.6;
-       color: rgba(255, 255, 255, 0.8);
+         color: rgba(255, 255, 255, 0.8);
     margin-bottom: var(--space-lg);
 }
 
@@ -2989,23 +2989,10 @@ section {
 }
 
 .floating-chatbot img {
-    width: 35px;
-    height: 35px;
+    width: 45px;
+    height: 45px;
     object-fit: contain;
     filter: brightness(0) invert(1);
-}
-
-.floating-chatbot.pulse {
-    animation: chatbot-pulse 2s infinite;
-}
-
-@keyframes chatbot-pulse {
-    0%, 100% {
-        box-shadow: 0 4px 20px rgba(64, 112, 183, 0.4);
-    }
-    50% {
-        box-shadow: 0 4px 20px rgba(64, 112, 183, 0.8), 0 0 0 10px rgba(64, 112, 183, 0.2);
-    }
 }
 
 /* Responsive adjustments for chatbot button */
@@ -3018,7 +3005,7 @@ section {
     }
     
     .floating-chatbot img {
-        width: 30px;
-        height: 30px;
+        width: 38px;
+        height: 38px;
     }
 }
