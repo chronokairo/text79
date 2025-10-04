@@ -1940,35 +1940,67 @@ body {
 
 .mascot-float {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 80px;
-    height: 80px;
+    bottom: 20px;
+    right: 20px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.25);
     cursor: pointer;
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     overflow: hidden;
+    position: relative;
 }
 
 .mascot-float:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
 }
 
 .mascot-video {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    z-index: 2;
 }
 
 .mascot-fallback {
     font-size: 2.5rem;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.mascot-fallback img {
+    width: 75%;
+    height: 75%;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    animation: robotBounce 2s ease-in-out infinite;
+}
+
+@keyframes robotBounce {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-5px) scale(1.05);
+    }
 }
 
 .chatbot-modal {
@@ -2342,10 +2374,15 @@ body {
     }
     
     .mascot-float {
-        width: 64px;
-        height: 64px;
-        bottom: var(--space-lg);
-        right: var(--space-lg);
+        width: 70px;
+        height: 70px;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .mascot-fallback img {
+        width: 70%;
+        height: 70%;
     }
 }
 

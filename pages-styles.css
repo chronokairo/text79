@@ -1,0 +1,10 @@
+/* Estilos específicos para a página contato.html */
+
+/* Posiciona o botão do bot no canto inferior direito */
+.mascot-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    /* Outros estilos existentes podem ser mantidos ou ajustados conforme necessário */
+}
