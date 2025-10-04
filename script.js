@@ -374,3 +374,143 @@ bounceStyle.textContent = `
     }
 `;
 document.head.appendChild(bounceStyle);
+
+// Chat Bot Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const robotButton = document.getElementById('robotButton');
+    const chatModal = document.getElementById('chatModal');
+    const closeChat = document.getElementById('closeChat');
+    const chatInput = document.getElementById('chatInput');
+    const sendChat = document.getElementById('sendChat');
+    const chatMessages = document.getElementById('chatMessages');
+    const quickOptions = document.querySelectorAll('.quick-option');
+
+    // Respostas automáticas do bot
+    const botResponses = {
+        'planos': 'Temos planos para estudantes, professores e escolas! Visite nossa página de Preços para ver todas as opções. 💰',
+        'recursos': 'Nossa plataforma oferece correção por IA, feedback personalizado, banco de redações e muito mais! Confira a página de Recursos. 📚',
+        'contato': 'Entre em contato conosco através do formulário na página de Contato ou pelo WhatsApp. Estamos prontos para ajudar! 📞',
+        'default': 'Desculpe, não entendi sua pergunta. Você pode usar os botões rápidos ou visitar nossas páginas para mais informações! 😊'
+    };
+
+    // Abrir chat
+    if (robotButton) {
+        robotButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            chatModal.classList.add('active');
+        });
+    }
+
+    // Fechar chat
+    if (closeChat) {
+        closeChat.addEventListener('click', function() {
+            chatModal.classList.remove('active');
+        });
+    }
+
+    // Fechar chat ao clicar fora
+    document.addEventListener('click', function(e) {
+        if (chatModal && chatModal.classList.contains('active')) {
+            if (!chatModal.contains(e.target) && !robotButton.contains(e.target)) {
+                chatModal.classList.remove('active');
+            }
+        }
+    });
+
+    // Função para adicionar mensagem
+    function addMessage(content, isUser = false) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `chat-message ${isUser ? 'user' : 'bot'}`;
+        messageDiv.innerHTML = `<div class="message-content">${content}</div>`;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Enviar mensagem
+    function sendMessage() {
+        const message = chatInput.value.trim();
+        if (message) {
+            addMessage(message, true);
+            chatInput.value = '';
+
+            // Simular resposta do bot
+            setTimeout(() => {
+                addMessage(botResponses['default']);
+            }, 500);
+        }
+    }
+
+    // Eventos de envio
+    if (sendChat) {
+        sendChat.addEventListener('click', sendMessage);
+    }
+
+    if (chatInput) {
+        chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    }
+
+    // Botões de opções rápidas
+    quickOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            const action = this.getAttribute('data-action');
+            const buttonText = this.textContent.trim();
+            
+            addMessage(buttonText, true);
+            
+            setTimeout(() => {
+                addMessage(botResponses[action] || botResponses['default']);
+            }, 500);
+        });
+    });
+});
+
+// ==========================================
+// FUNCIONALIDADE DOS BOTÕES DE TAB (RECURSOS)
+// ==========================================
+
+// Tabs de recursos (Para Estudantes, Para Professores, Para Escolas)
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const resourceCategories = document.querySelectorAll('.resource-category');
+
+    if (tabButtons.length > 0 && resourceCategories.length > 0) {
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const targetCategory = this.getAttribute('data-category');
+                
+                // Remove active class de todos os botões
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Adiciona active class ao botão clicado
+                this.classList.add('active');
+                
+                // Remove active class de todas as categorias
+                resourceCategories.forEach(category => {
+                    category.classList.remove('active');
+                });
+                
+                // Adiciona active class à categoria correspondente
+                const targetElement = document.getElementById(targetCategory);
+                if (targetElement) {
+                    targetElement.classList.add('active');
+                    
+                    // Anima entrada do conteúdo
+                    const cards = targetElement.querySelectorAll('.recurso-detailed-card');
+                    cards.forEach((card, index) => {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.transition = 'all 0.5s ease-out';
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    });
+                }
+            });
+        });
+    }
+});

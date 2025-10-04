@@ -28,9 +28,9 @@
                     </div>
                     <ul class="nav-menu">
                         <li><a href="home.html">Home</a></li>
+                        <li><a href="para-quem.html">Para Quem</a></li>
                         <li><a href="recursos.html">Recursos</a></li>
                         <li><a href="precos.html">Preços</a></li>
-                        <li><a href="para-quem.html">Para Quem</a></li>
                         <li><a href="contato.html">Contato</a></li>
                         <li><a href="#" class="btn-login">Entrar</a></li>
                     </ul>
@@ -549,64 +549,54 @@
         </div>
     </footer>
 
-    <!-- Mascot Video Button -->
-    <div class="mascot-float" id="mascotButton">
-        <video autoplay loop muted playsinline class="mascot-video" onerror="this.style.display='none'">
-            <source src="mascot-animation.mp4" type="video/mp4">
-            <source src="mascot-animation.webm" type="video/webm">
-        </video>
-        <div class="mascot-fallback">
-            <img src="assets/robo.svg" alt="Robô Escrita360">
-        </div>
-    </div>
+    <!-- Floating Robot Button -->
+    <a href="#" class="floating-robot" id="robotButton" aria-label="Assistente Virtual">
+        <img src="assets/robo.svg" alt="Robô Escrita360">
+    </a>
 
-    <!-- Chatbot Modal -->
-    <div class="chatbot-modal" id="chatbotModal">
-        <div class="chatbot-container">
-            <div class="chatbot-header">
-                <div class="chatbot-header-content">
-                    <div class="chatbot-avatar">
-                        <video autoplay loop muted playsinline class="avatar-video">
-                            <source src="mascot-animation.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="chatbot-title">
-                        <h3>Escrita360 Assistant</h3>
-                        <span class="chatbot-status">Online</span>
+    <!-- Chat Modal -->
+    <div class="chat-modal" id="chatModal">
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="chat-header-content">
+                    <img src="assets/robo.svg" alt="Robô" class="chat-avatar">
+                    <div>
+                        <h3>Assistente Escrita360</h3>
+                        <span class="chat-status">Online</span>
                     </div>
                 </div>
-                <button class="chatbot-close" id="closeChatbot">
+                <button class="chat-close" id="closeChat">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            <div class="chatbot-messages" id="chatbotMessages">
-                <div class="message bot-message">
+            <div class="chat-messages" id="chatMessages">
+                <div class="chat-message bot">
                     <div class="message-content">
                         Olá! 👋 Sou o assistente da Escrita360. Como posso ajudá-lo hoje?
                     </div>
                 </div>
             </div>
-            <div class="chatbot-quick-replies">
-                <button class="quick-reply" data-message="Quero saber sobre os planos">
+            <div class="chat-quick-options">
+                <button class="quick-option" data-action="planos">
                     <i class="fas fa-tag"></i> Ver Planos
                 </button>
-                <button class="quick-reply" data-message="Como funciona a plataforma?">
-                    <i class="fas fa-question-circle"></i> Como Funciona
+                <button class="quick-option" data-action="recursos">
+                    <i class="fas fa-list"></i> Recursos
                 </button>
-                <button class="quick-reply" data-message="Quero agendar uma demonstração">
-                    <i class="fas fa-calendar"></i> Agendar Demo
+                <button class="quick-option" data-action="contato">
+                    <i class="fas fa-envelope"></i> Contato
                 </button>
             </div>
-            <div class="chatbot-input-container">
-                <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Digite sua mensagem...">
-                <button class="chatbot-send" id="sendMessage">
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Digite sua mensagem...">
+                <button class="chat-send" id="sendChat">
                     <i class="fas fa-paper-plane"></i>
                 </button>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script></script>
     
     <!-- Simple Animation Script -->
     <script>
@@ -650,23 +640,6 @@
                 });
             });
             
-            // Chatbot functionality
-            const mascotButton = document.getElementById('mascotButton');
-            const chatbotModal = document.getElementById('chatbotModal');
-            const closeChatbot = document.getElementById('closeChatbot');
-            
-            if (mascotButton) {
-                mascotButton.addEventListener('click', function() {
-                    chatbotModal.classList.add('active');
-                });
-            }
-            
-            if (closeChatbot) {
-                closeChatbot.addEventListener('click', function() {
-                    chatbotModal.classList.remove('active');
-                });
-            }
-            
             // Counter animation
             const counters = document.querySelectorAll('.counter');
             const observerOptions = {
@@ -700,10 +673,5 @@
             counters.forEach(counter => counterObserver.observe(counter));
         });
     </script>
-
-    <!-- Floating Chatbot Button -->
-    <button class="floating-chatbot" aria-label="Abrir chat de ajuda">
-        <img src="assets/robo.svg" alt="Assistente Virtual">
-    </button>
 </body>
 </html>
