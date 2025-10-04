@@ -321,3 +321,56 @@ chatbotStyle.textContent = `
     }
 `;
 document.head.appendChild(chatbotStyle);
+
+// Floating Chatbot Button Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const chatbotButton = document.querySelector('.floating-chatbot');
+    
+    if (chatbotButton) {
+        // Add pulse animation on page load
+        setTimeout(() => {
+            chatbotButton.classList.add('pulse');
+        }, 1000);
+        
+        // Remove pulse after first interaction
+        chatbotButton.addEventListener('click', function() {
+            chatbotButton.classList.remove('pulse');
+            
+            // Add your chatbot opening logic here
+            console.log('Chatbot button clicked!');
+            
+            // Example: You can open a chat widget, modal, or redirect to a chat page
+            // For now, we'll show an alert as placeholder
+            alert('Em breve! O chat será implementado aqui.');
+            
+            // Optional: Add a bounce animation on click
+            this.style.animation = 'bounce 0.5s ease';
+            setTimeout(() => {
+                this.style.animation = '';
+            }, 500);
+        });
+        
+        // Optional: Make button appear with animation after page load
+        setTimeout(() => {
+            chatbotButton.style.opacity = '1';
+            chatbotButton.style.transform = 'scale(1)';
+        }, 500);
+        
+        // Initialize button as hidden for animation
+        chatbotButton.style.opacity = '0';
+        chatbotButton.style.transform = 'scale(0.5)';
+        chatbotButton.style.transition = 'all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+    }
+});
+
+// Bounce animation for chatbot button
+const bounceStyle = document.createElement('style');
+bounceStyle.textContent = `
+    @keyframes bounce {
+        0%, 100% { transform: scale(1); }
+        25% { transform: scale(0.9); }
+        50% { transform: scale(1.1); }
+        75% { transform: scale(0.95); }
+    }
+`;
+document.head.appendChild(bounceStyle);
