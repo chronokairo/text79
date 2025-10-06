@@ -5537,5 +5537,171 @@ section {
     color: #4070B7;
     padding: 0.5rem 1rem;
     border-radius: 2rem;
-    font-size: 0.875
+    font-size: 0.875rem;
+    font-weight: 600;
+    border: 1px solid rgba(64, 112, 183, 0.2);
+}
+
+/* =================================
+   RESPONSIVE STYLES - PARA QUEM PAGE
+   ================================= */
+
+/* Desktop Styles (968px+) */
+@media (min-width: 968px) {
+    .para-quem-hero h1 {
+        font-size: 3.5rem !important;
     }
+    
+    .page-para-quem .audience-grid-detailed {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+    
+    .page-para-quem .audience-detailed-card {
+        padding: 3rem;
+    }
+    
+    .page-para-quem .stories-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .page-para-quem .success-stories h2 {
+        font-size: 3rem;
+    }
+}
+
+/* Tablet Styles (768px to 968px) */
+@media (max-width: 968px) and (min-width: 769px) {
+    .para-quem-hero h1 {
+        font-size: 2.75rem !important;
+    }
+    
+    .page-para-quem .audience-grid-detailed {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+    
+    .page-para-quem .audience-detailed-card {
+        padding: 2.5rem;
+    }
+    
+    .page-para-quem .audience-content {
+        gap: 2rem;
+    }
+    
+    .page-para-quem .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .page-para-quem .stories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .page-para-quem .cta-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+/* Mobile Styles (max 768px) */
+@media (max-width: 768px) {
+    .para-quem-hero {
+        padding: 4rem 0 3rem !important;
+    }
+    
+    .para-quem-hero h1 {
+        font-size: 2rem !important;
+    }
+    
+    .para-quem-hero p {
+        font-size: 1.0625rem !important;
+    }
+    
+    .page-para-quem .target-audience-main {
+        padding: 4rem 0;
+    }
+    
+    .page-para-quem .audience-grid-detailed {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .page-para-quem .audience-detailed-card {
+        padding: 2rem;
+    }
+    
+    .page-para-quem .audience-header {
+        padding: 2rem 1.5rem 1.5rem;
+    }
+    
+    .page-para-quem .audience-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .page-para-quem .audience-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .page-para-quem .audience-icon i {
+        font-size: 2rem;
+    }
+    
+    .page-para-quem .audience-content {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+    
+    .page-para-quem .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .page-para-quem .stats-highlight {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .page-para-quem .stat-number {
+        font-size: 2rem;
+    }
+    
+    .page-para-quem .success-stories {
+        padding: 4rem 0;
+    }
+    
+    .page-para-quem .success-stories h2 {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .page-para-quem .stories-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .page-para-quem .cta {
+        padding: 4rem 0;
+    }
+    
+    .page-para-quem .cta h2 {
+        font-size: 2rem;
+    }
+    
+    .page-para-quem .cta p {
+        font-size: 1.0625rem;
+    }
+    
+    .page-para-quem .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+    
+    .page-para-quem .cta-buttons .btn {
+        width: 100%;
+    }
+}
+
+/* END OF FILE */
