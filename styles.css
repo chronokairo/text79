@@ -1105,6 +1105,562 @@ body {
 }
 
 /* =================================
+   CAROUSEL PARA QUEM
+   ================================= */
+
+.target-audience-carousel {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.carousel-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Carousel Tabs */
+.carousel-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 40px;
+    padding: 8px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.carousel-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-tab {
+    flex: 1;
+    min-width: 180px;
+    padding: 16px 24px;
+    border: none;
+    background: transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #64748b;
+    position: relative;
+}
+
+.carousel-tab i {
+    font-size: 18px;
+}
+
+.carousel-tab.active {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(64, 112, 183, 0.3);
+}
+
+.tab-badge {
+    position: absolute;
+    top: -8px;
+    right: 8px;
+    background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Carousel Container */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    background: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-slide {
+    min-width: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.slide-content {
+    padding: 60px;
+}
+
+.slide-content.featured {
+    background: linear-gradient(135deg, rgba(64, 112, 183, 0.03) 0%, rgba(97, 194, 211, 0.03) 100%);
+    border: 2px solid rgba(64, 112, 183, 0.1);
+}
+
+/* Slide Header */
+.slide-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.slide-icon {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 8px 24px rgba(64, 112, 183, 0.25);
+}
+
+.slide-icon i {
+    font-size: 32px;
+    color: white;
+}
+
+.slide-title h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--dark-blue);
+    margin: 0 0 8px 0;
+}
+
+.slide-subtitle {
+    font-size: 18px;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Slide Body */
+.slide-body {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.slide-description {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #475569;
+}
+
+/* Stats Cards */
+.slide-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 24px 0;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+    padding: 28px;
+    border-radius: 16px;
+    text-align: center;
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-blue);
+    box-shadow: 0 8px 24px rgba(64, 112, 183, 0.15);
+}
+
+.stat-number {
+    font-size: 42px;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Features */
+.slide-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.feature-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    color: #475569;
+    padding: 12px;
+    background: #f8fafc;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    background: #e0f2fe;
+    transform: translateX(4px);
+}
+
+.feature-item i {
+    color: var(--primary-blue);
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+/* Features Grid for Schools */
+.slide-features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.grid-feature {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    text-align: center;
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.grid-feature:hover {
+    border-color: var(--primary-blue);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(64, 112, 183, 0.15);
+}
+
+.grid-feature i {
+    font-size: 32px;
+    color: var(--primary-blue);
+    margin-bottom: 12px;
+}
+
+.grid-feature h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dark-blue);
+    margin: 0 0 8px 0;
+}
+
+.grid-feature p {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Tags */
+.slide-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.slide-tag {
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+    color: var(--primary-blue);
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid #bae6fd;
+}
+
+/* Testimonial */
+.slide-testimonial {
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+    padding: 32px;
+    border-radius: 16px;
+    border-left: 4px solid var(--primary-blue);
+}
+
+.testimonial-quote {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.testimonial-quote i {
+    position: absolute;
+    top: -8px;
+    left: 0;
+    font-size: 24px;
+    color: var(--secondary-blue);
+    opacity: 0.3;
+}
+
+.testimonial-quote p {
+    font-size: 16px;
+    font-style: italic;
+    color: #475569;
+    line-height: 1.7;
+    margin: 0 0 0 36px;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-left: 36px;
+}
+
+.testimonial-author strong {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+.testimonial-author span {
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* CTA Button */
+.slide-cta {
+    text-align: center;
+    padding-top: 16px;
+}
+
+.slide-cta .btn-large {
+    padding: 16px 48px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Navigation Arrows */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.carousel-arrow:hover {
+    background: var(--primary-blue);
+    border-color: var(--primary-blue);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(64, 112, 183, 0.3);
+}
+
+.carousel-arrow i {
+    font-size: 20px;
+    color: var(--dark-blue);
+    transition: color 0.3s ease;
+}
+
+.carousel-arrow:hover i {
+    color: white;
+}
+
+.carousel-prev {
+    left: -26px;
+}
+
+.carousel-next {
+    right: -26px;
+}
+
+/* Pagination Dots */
+.carousel-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 32px 0;
+}
+
+.pagination-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.pagination-dot:hover {
+    background: #94a3b8;
+    transform: scale(1.2);
+}
+
+.pagination-dot.active {
+    width: 32px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .carousel-tabs {
+        gap: 8px;
+    }
+    
+    .carousel-tab {
+        min-width: 140px;
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+    
+    .carousel-tab i {
+        font-size: 16px;
+    }
+    
+    .slide-content {
+        padding: 40px;
+    }
+    
+    .slide-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .slide-title h2 {
+        font-size: 28px;
+    }
+    
+    .slide-subtitle {
+        font-size: 16px;
+    }
+    
+    .slide-stats {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .slide-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .slide-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .carousel-arrow {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .carousel-prev {
+        left: 10px;
+    }
+    
+    .carousel-next {
+        right: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .target-audience-carousel {
+        padding: 60px 0;
+    }
+    
+    .carousel-tabs {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .carousel-tab {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .slide-content {
+        padding: 30px 20px;
+    }
+    
+    .slide-header {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+    }
+    
+    .slide-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .slide-icon i {
+        font-size: 28px;
+    }
+    
+    .slide-title h2 {
+        font-size: 24px;
+    }
+    
+    .slide-subtitle {
+        font-size: 15px;
+    }
+    
+    .slide-features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-number {
+        font-size: 36px;
+    }
+    
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel-arrow i {
+        font-size: 16px;
+    }
+    
+    .carousel-prev {
+        left: 8px;
+    }
+    
+    .carousel-next {
+        right: 8px;
+    }
+}
+
+/* =================================
    FOOTER
    ================================= */
 
