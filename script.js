@@ -1214,6 +1214,7 @@ console.log('%c💡 Interessado em fazer parte do time? Entre em contato!',
 
 document.addEventListener('DOMContentLoaded', function() {
     const carouselSlides = document.querySelector('.carousel-slides');
+    const carouselBox = document.querySelector('.carousel-container');
     const slides = document.querySelectorAll('.carousel-slide');
     const tabs = document.querySelectorAll('.carousel-tab');
     const prevBtn = document.querySelector('.carousel-prev');
@@ -1227,6 +1228,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalSlides = slides.length;
     let autoplayInterval;
     let isTransitioning = false;
+    
+    // Função para ajustar a altura do container
+    function adjustCarouselHeight(index) {
+        if (!carouselBox || !slides[index]) return;
+        
+        const activeSlide = slides[index];
+        const slideHeight = activeSlide.scrollHeight;
+        carouselBox.style.height = slideHeight + 'px';
+    }
     
     // Função para ir para um slide específico
     function goToSlide(index, skipAnimation = false) {
@@ -1252,6 +1262,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const translateX = -index * 100;
         carouselSlides.style.transform = `translateX(${translateX}%)`;
         
+        // Ajustar altura do container
+        adjustCarouselHeight(index);
+        
         currentSlide = index;
         
         // Resetar flag após animação
@@ -1262,6 +1275,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Resetar autoplay
         resetAutoplay();
     }
+    
+    // Ajustar altura inicial
+    setTimeout(() => {
+        adjustCarouselHeight(0);
+    }, 100);
+    
+    // Ajustar altura quando a janela é redimensionada
+    window.addEventListener('resize', () => {
+        adjustCarouselHeight(currentSlide);
+    });
     
     // Próximo slide
     function nextSlide() {
