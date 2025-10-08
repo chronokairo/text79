@@ -6524,5 +6524,58 @@ section {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* =================================
+   PRICING TOGGLE FIXO
+   ================================= */
+
+/* Torna o pricing toggle fixo no topo da página */
+.page-precos .pricing-toggle {
+    position: fixed;
+    top: 70px; /* Logo abaixo do header */
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(12px);
+    padding: 1.5rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 0;
+}
+
+/* Adiciona espaço no topo da seção de preços para compensar o toggle fixo */
+.page-precos .pricing-section {
+    padding-top: 140px;
+}
+
+/* Melhora a visibilidade do toggle */
+.page-precos .pricing-toggle span {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Destaque no texto "Economize 30%" */
+.page-precos .pricing-toggle span small {
+    color: #28a745;
+    font-weight: 600;
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+    .page-precos .pricing-toggle {
+        top: 60px; /* Header menor em mobile */
+        padding: 1rem 0;
+        gap: 0.75rem;
+    }
+    
+    .page-precos .pricing-toggle span {
+        font-size: 0.9rem;
+    }
+    
+    .page-precos .pricing-section {
+        padding-top: 120px;
+    }
+}
+
 /* END OF FILE */
 
