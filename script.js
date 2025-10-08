@@ -775,31 +775,46 @@ document.addEventListener('DOMContentLoaded', function() {
 // ========================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    const pricingToggle = document.getElementById('pricingToggle');
-    const monthlyPrices = document.querySelectorAll('[data-monthly]');
-    const yearlyPrices = document.querySelectorAll('[data-yearly]');
-
+    const pricingToggle = document.getElementById('pricing-toggle');
+    
     if (pricingToggle) {
+        console.log('Pricing toggle encontrado e inicializado');
+        
         pricingToggle.addEventListener('change', function() {
             const isYearly = this.checked;
-
-            monthlyPrices.forEach((element, index) => {
-                const yearlyElement = yearlyPrices[index];
+            console.log('Toggle alterado para:', isYearly ? 'Anual' : 'Mensal');
+            
+            // Seleciona todos os elementos de preço com data-monthly e data-yearly
+            const priceElements = document.querySelectorAll('[data-monthly]');
+            console.log('Elementos de preço encontrados:', priceElements.length);
+            
+            priceElements.forEach(element => {
+                const monthlyPrice = element.getAttribute('data-monthly');
+                const yearlyPrice = element.getAttribute('data-yearly');
                 
-                if (isYearly) {
-                    element.style.display = 'none';
-                    if (yearlyElement) yearlyElement.style.display = 'block';
-                } else {
-                    element.style.display = 'block';
-                    if (yearlyElement) yearlyElement.style.display = 'none';
-                }
+                console.log('Mudando preço de', monthlyPrice, 'para', isYearly ? yearlyPrice : monthlyPrice);
+                
+                // Adiciona animação de fade
+                element.style.opacity = '0';
+                element.style.transform = 'scale(0.95)';
+                
+                setTimeout(() => {
+                    // Atualiza o valor do preço
+                    element.textContent = isYearly ? yearlyPrice : monthlyPrice;
+                    
+                    // Retorna animação
+                    element.style.opacity = '1';
+                    element.style.transform = 'scale(1)';
+                }, 200);
             });
-
-            // Animar transição
-            document.querySelectorAll('.pricing-card').forEach(card => {
-                card.style.animation = 'fadeInUp 0.5s ease-out';
+            
+            // Adiciona estilo de transição suave
+            priceElements.forEach(element => {
+                element.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
             });
         });
+    } else {
+        console.log('Pricing toggle não encontrado na página');
     }
 });
 

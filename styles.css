@@ -6494,4 +6494,35 @@ section {
     }
 }
 
+/* =================================
+   PRICING TOGGLE ENHANCEMENTS
+   ================================= */
+
+/* Animação suave para mudança de preços */
+.price .amount {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.pricing-toggle span {
+    color: var(--text-color);
+    transition: color 0.3s ease;
+    user-select: none;
+}
+
+.pricing-toggle span small {
+    color: #28a745;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.toggle-label {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-label::after {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 /* END OF FILE */
+
