@@ -2975,13 +2975,14 @@ body {
 .faq-accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.4s ease;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
     padding: 0 2rem;
+    opacity: 0;
 }
 
 .faq-accordion-item.active .faq-accordion-content {
-    max-height: 500px;
     padding: 0 2rem 1.5rem 2rem;
+    opacity: 1;
 }
 
 .faq-accordion-content p {
@@ -2990,6 +2991,55 @@ body {
     font-size: 1rem;
     margin: 0;
     padding-top: 0.5rem;
+}
+
+/* Animação adicional para o ícone */
+.faq-accordion-icon {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
+}
+
+/* Melhoria no hover do header */
+.faq-accordion-header {
+    position: relative;
+}
+
+.faq-accordion-header::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--primary-blue) 0%, transparent 100%);
+    opacity: 0.05;
+    transition: width 0.3s ease;
+}
+
+.faq-accordion-header:hover::before {
+    width: 100%;
+}
+
+/* Responsividade do FAQ */
+@media (max-width: 768px) {
+    .faq-accordion-header {
+        padding: 1.25rem 1.5rem;
+    }
+    
+    .faq-accordion-content {
+        padding: 0 1.5rem;
+    }
+    
+    .faq-accordion-item.active .faq-accordion-content {
+        padding: 0 1.5rem 1.25rem 1.5rem;
+    }
+    
+    .faq-accordion-title h3 {
+        font-size: 1rem;
+    }
+    
+    .faq-accordion-title i {
+        font-size: 1.25rem;
+    }
 }
 
 /* =================================

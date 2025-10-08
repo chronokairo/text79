@@ -516,7 +516,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ==========================================
-// FUNCIONALIDADE FAQ ACORDE�O
+// FUNCIONALIDADE FAQ ACORDEÃO
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -525,26 +525,64 @@ document.addEventListener('DOMContentLoaded', function() {
     if (faqItems.length > 0) {
         faqItems.forEach(item => {
             const header = item.querySelector('.faq-accordion-header');
+            const content = item.querySelector('.faq-accordion-content');
             
-            header.addEventListener('click', function() {
-                const isActive = item.classList.contains('active');
+            if (header && content) {
+                // Define altura inicial do conteúdo
+                if (item.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
                 
-                // Fecha todos os itens
-                faqItems.forEach(faqItem => {
-                    faqItem.classList.remove('active');
+                header.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const isActive = item.classList.contains('active');
+                    
+                    // Fecha todos os itens
+                    faqItems.forEach(faqItem => {
+                        const faqContent = faqItem.querySelector('.faq-accordion-content');
+                        faqItem.classList.remove('active');
+                        if (faqContent) {
+                            faqContent.style.maxHeight = '0px';
+                        }
+                    });
+                    
+                    // Se não estava ativo, abre o item clicado
+                    if (!isActive) {
+                        item.classList.add('active');
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        
+                        // Scroll suave até o item (opcional)
+                        setTimeout(() => {
+                            item.scrollIntoView({ 
+                                behavior: 'smooth', 
+                                block: 'nearest' 
+                            });
+                        }, 300);
+                    }
                 });
-                
-                // Se n�o estava ativo, abre o item clicado
-                if (!isActive) {
-                    item.classList.add('active');
+            }
+        });
+        
+        // Abre o primeiro item por padrão
+        if (faqItems[0]) {
+            const firstContent = faqItems[0].querySelector('.faq-accordion-content');
+            faqItems[0].classList.add('active');
+            if (firstContent) {
+                firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
+            }
+        }
+        
+        // Recalcula altura ao redimensionar a janela
+        window.addEventListener('resize', function() {
+            faqItems.forEach(item => {
+                if (item.classList.contains('active')) {
+                    const content = item.querySelector('.faq-accordion-content');
+                    if (content) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    }
                 }
             });
         });
-        
-        // Abre o primeiro item por padr�o
-        if (faqItems[0]) {
-            faqItems[0].classList.add('active');
-        }
     }
 });
 
@@ -811,42 +849,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
-    }
-});
-
-// ========================================
-// FAQ ACCORDION (ENHANCED)
-// ========================================
-
-// Versão melhorada do FAQ (sobrescreve a anterior se existir)
-document.addEventListener('DOMContentLoaded', function() {
-    const faqItems = document.querySelectorAll('.faq-accordion-item');
-
-    if (faqItems.length > 0) {
-        faqItems.forEach(item => {
-            const header = item.querySelector('.faq-accordion-header');
-
-            if (header) {
-                header.addEventListener('click', function() {
-                    const isActive = item.classList.contains('active');
-
-                    // Fecha todos os itens
-                    faqItems.forEach(faqItem => {
-                        faqItem.classList.remove('active');
-                    });
-
-                    // Se não estava ativo, abre o item clicado
-                    if (!isActive) {
-                        item.classList.add('active');
-                    }
-                });
-            }
-        });
-
-        // Abre o primeiro item por padrão
-        if (faqItems[0]) {
-            faqItems[0].classList.add('active');
-        }
     }
 });
 
