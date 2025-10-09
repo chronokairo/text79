@@ -1020,12 +1020,6 @@ body {
     width: 40%;
 }
 
-.comparison-table thead tr th.popular-column {
-    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--secondary-blue) 100%);
-    position: relative;
-    box-shadow: 0 4px 15px rgba(97, 194, 211, 0.3);
-}
-
 .comparison-table thead tr th.popular-column::after {
     content: '⭐ MAIS POPULAR';
     position: absolute;
