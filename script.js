@@ -1460,3 +1460,45 @@ document.addEventListener('DOMContentLoaded', function() {
         contentObserver.observe(carouselContainer);
     }
 });
+
+// ========================================
+// PRICING TOGGLE - HIDE ON SCROLL (PREÇOS PAGE)
+// ========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Verifica se estamos na página de preços
+    if (!document.body.classList.contains('page-precos')) return;
+    
+    const pricingToggle = document.querySelector('.pricing-toggle');
+    if (!pricingToggle) return;
+    
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+    const scrollThreshold = 150; // Distância em pixels antes de começar a esconder
+    
+    function updateToggleVisibility() {
+        const currentScrollY = window.scrollY;
+        
+        // Se rolou para baixo e passou do threshold, esconde a barra
+        if (currentScrollY > scrollThreshold && currentScrollY > lastScrollY) {
+            pricingToggle.classList.add('hidden');
+        } 
+        // Se rolou para cima ou está antes do threshold, mostra a barra
+        else if (currentScrollY < lastScrollY || currentScrollY <= scrollThreshold) {
+            pricingToggle.classList.remove('hidden');
+        }
+        
+        lastScrollY = currentScrollY;
+        ticking = false;
+    }
+    
+    // Usa requestAnimationFrame para melhor performance
+    function onScroll() {
+        if (!ticking) {
+            window.requestAnimationFrame(updateToggleVisibility);
+            ticking = true;
+        }
+    }
+    
+    window.addEventListener('scroll', onScroll, { passive: true });
+});
