@@ -997,7 +997,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // ========================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    const grids = document.querySelectorAll('.diferencial-grid, .features-grid, .steps-grid, .testimonials-grid, .pricing-grid');
+    const grids = document.querySelectorAll('.diferencial-grid, .features-grid, .steps-grid, .pricing-grid');
 
     grids.forEach(grid => {
         const items = grid.children;
@@ -1432,7 +1432,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Animações de entrada para elementos do slide
     function animateSlideContent(slideIndex) {
         const slide = slides[slideIndex];
-        const elements = slide.querySelectorAll('.slide-header, .slide-description, .slide-stats, .slide-features, .slide-features-grid, .slide-tags, .slide-testimonial, .slide-cta');
+        const elements = slide.querySelectorAll('.slide-header, .slide-description, .slide-stats, .slide-features, .slide-features-grid, .slide-tags, .slide-cta');
         
         elements.forEach((element, index) => {
             element.style.opacity = '0';
