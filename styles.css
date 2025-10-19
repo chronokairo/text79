@@ -195,7 +195,7 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #ffffff;
+    background-color: var(--neutral-900);
 }
 
 .container {
@@ -461,7 +461,7 @@ body {
    ================================= */
 
 .hero {
-    background: linear-gradient(135deg, var(--light-blue) 0%, rgba(255, 255, 255, 1) 100%);
+    background: white;
     padding: 5rem 0 6rem 0;
     overflow: hidden;
     position: relative;
@@ -481,7 +481,9 @@ body {
 }
 
 .hero-content {
-    max-width: 680px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
     position: relative;
     z-index: 1;
 }
@@ -507,6 +509,7 @@ body {
     display: flex;
     gap: var(--space-md);
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .hero-image {
@@ -660,7 +663,12 @@ body {
 
 .diferencial {
     padding: 5rem 0;
-    background: linear-gradient(180deg, var(--neutral-100) 0%, white 100%);
+    background: white;
+}
+
+.diferencial .container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .diferencial h2 {
@@ -735,7 +743,12 @@ body {
 
 .features-section {
     padding: 5rem 0;
-    background: white;
+    background: var(--neutral-100);
+}
+
+.features-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .section-title {
@@ -837,7 +850,12 @@ body {
 
 .how-it-works {
     padding: 5rem 0;
-    background: linear-gradient(180deg, var(--neutral-100) 0%, white 100%);
+    background: white;
+}
+
+.how-it-works .container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .steps-grid {
@@ -901,7 +919,12 @@ body {
 
 .comparison-section {
     padding: 5rem 0;
-    background: linear-gradient(180deg, var(--light-blue) 0%, white 50%, var(--lighter-blue) 100%);
+    background: var(--neutral-100);
+}
+
+.comparison-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .comparison-section h2 {
@@ -1834,10 +1857,10 @@ body {
    ================================= */
 
 .cta {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+    background: white;
     padding: 5rem 0;
     text-align: center;
-    color: white;
+    color: var(--neutral-900);
     position: relative;
     overflow: hidden;
 }
@@ -1849,7 +1872,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle at 50% 50%, rgba(64, 112, 183, 0.03) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -1861,7 +1884,7 @@ body {
 .cta-content h2 {
     font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: var(--space-lg);
-    color: white;
+    color: var(--neutral-900);
     font-weight: var(--font-extrabold);
     letter-spacing: -0.02em;
 }
@@ -1873,7 +1896,7 @@ body {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    color: white;
+    color: var(--neutral-700);
     line-height: 1.6;
 }
 
@@ -3534,6 +3557,11 @@ html {
     background: var(--neutral-100);
 }
 
+.stats .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .stats .section-title {
     text-align: center;
     margin-bottom: var(--space-3xl);
@@ -3583,6 +3611,11 @@ html {
     background: white;
 }
 
+.about-platform .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 .about-text {
     font-size: clamp(1.125rem, 2vw, 1.375rem);
     line-height: 1.8;
@@ -3600,7 +3633,12 @@ html {
 /* Platforms Section */
 .platforms-section {
     padding: var(--space-3xl) 0;
-    background: var(--light-blue);
+    background: var(--neutral-100);
+}
+
+.platforms-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .platforms-section .section-title {
@@ -3679,6 +3717,11 @@ html {
 .partners-section {
     padding: var(--space-3xl) 0;
     background: white;
+}
+
+.partners-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .partners-section .section-title {
@@ -4326,7 +4369,7 @@ section {
 }
 
 .para-quem-hero h1 {
-    color: #ffffff;
+    color: var(--neutral-900);
     font-size: 3.5rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
@@ -4335,7 +4378,7 @@ section {
 }
 
 .para-quem-hero p {
-    color: rgba(255, 255, 255, 0.95);
+    color: var(--neutral-700);
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 1.6;
@@ -4407,7 +4450,7 @@ section {
     top: 20px;
     right: -35px;
     background: linear-gradient(135deg, #4070B7, #39A1DB);
-    color: #ffffff;
+    color: var(--neutral-900);
     padding: 8px 40px;
     font-size: 0.875rem;
     font-weight: 700;
@@ -4446,7 +4489,7 @@ section {
 
 .audience-icon i {
     font-size: 2.5rem;
-    color: #ffffff;
+    color: var(--neutral-900);
 }
 
 .audience-header h2 {
@@ -4558,7 +4601,7 @@ section {
 
 .use-case-tags .tag:hover {
     background: linear-gradient(135deg, #4070B7, #39A1DB);
-    color: #ffffff;
+    color: var(--neutral-900);
     border-color: #4070B7;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(64, 112, 183, 0.25);
@@ -4779,7 +4822,7 @@ section {
 
 .story-icon i {
     font-size: 2rem;
-    color: #ffffff;
+    color: var(--neutral-900);
 }
 
 .story-card h3 {
@@ -4811,7 +4854,7 @@ section {
 /* CTA Section */
 .cta {
     padding: 6rem 0;
-    background: linear-gradient(135deg, #4070B7 0%, #39A1DB 50%, #61C2D3 100%);
+    background: white;
     position: relative;
     overflow: hidden;
 }
@@ -4824,8 +4867,8 @@ section {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 30% 20%, rgba(97, 194, 211, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 70% 80%, rgba(26, 91, 148, 0.3) 0%, transparent 50%);
+        radial-gradient(circle at 30% 20%, rgba(64, 112, 183, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(57, 161, 219, 0.03) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -4838,7 +4881,7 @@ section {
 }
 
 .cta h2 {
-    color: #ffffff;
+    color: var(--neutral-900);
     font-size: 3rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
@@ -4846,7 +4889,7 @@ section {
 }
 
 .cta p {
-    color: rgba(255, 255, 255, 0.95);
+    color: var(--neutral-700);
     font-size: 1.25rem;
     line-height: 1.7;
     margin-bottom: 2.5rem;
@@ -5354,7 +5397,7 @@ section {
 
 .use-case-tags .tag:hover {
     background: linear-gradient(135deg, #4070B7, #39A1DB);
-    color: #ffffff;
+    color: var(--neutral-900);
     border-color: #4070B7;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(64, 112, 183, 0.25);
@@ -5575,7 +5618,7 @@ section {
 
 .story-icon i {
     font-size: 2rem;
-    color: #ffffff;
+    color: var(--neutral-900);
 }
 
 .story-card h3 {
@@ -5607,7 +5650,7 @@ section {
 /* CTA Section */
 .cta {
     padding: 6rem 0;
-    background: linear-gradient(135deg, #4070B7 0%, #39A1DB 50%, #61C2D3 100%);
+    background: white;
     position: relative;
     overflow: hidden;
 }
@@ -5620,8 +5663,8 @@ section {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 30% 20%, rgba(97, 194, 211, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 70% 80%, rgba(26, 91, 148, 0.3) 0%, transparent 50%);
+        radial-gradient(circle at 30% 20%, rgba(64, 112, 183, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(57, 161, 219, 0.03) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -5634,7 +5677,7 @@ section {
 }
 
 .cta h2 {
-    color: #ffffff;
+    color: var(--neutral-900);
     font-size: 3rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
@@ -5642,7 +5685,7 @@ section {
 }
 
 .cta p {
-    color: rgba(255, 255, 255, 0.95);
+    color: var(--neutral-700);
     font-size: 1.25rem;
     line-height: 1.7;
     margin-bottom: 2.5rem;
@@ -6402,4 +6445,8 @@ section {
 }
 
 /* END OF FILE */
+
+
+
+
 
